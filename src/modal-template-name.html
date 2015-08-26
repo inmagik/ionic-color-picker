@@ -1,0 +1,37 @@
+ <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">
+    <ion-header-bar ng-class="::ui.headerFooterClass">
+      <h1 class="title">{{::ui.modalTitle}}</h1>
+    </ion-header-bar>
+    <ion-content>
+
+    <div ng-if="!ui.shortColorList">
+        <div class="text-center" ng-if="!showList" style="padding-top:40px;">
+            <h4 class="muted">{{::ui.loadListMessage}}</h4>
+            <p>
+                <ion-spinner></ion-spinner>
+            </p>
+        </div>
+        <div class="list" ng-if="showList" class="animate-if">
+            <div class="item item-text-wrap" collection-repeat="col in ui.namedColorsAsList track by $index" color-box="{{col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">
+            <h2 color-box="{{col[1]}}">{{col[0]}}</h2>
+            <p color-box="{{col[1]}}">{{col[1]}}</p>
+            </div>
+        </div>
+    </div>
+    <div ng-if="ui.shortColorList">
+        <div class="list">
+            <div class="item item-text-wrap" ng-repeat="col in ui.namedColorsAsList track by $index" color-box="{{::col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">
+            <h2 color-box="{{::col[1]}}">{{::col[0]}}</h2>
+            <p color-box="{{::col[1]}}">{{::col[1]}}</p>
+            </div>
+        </div>
+    </div>
+      
+    </ion-content>
+    <ion-footer-bar ng-class="::ui.headerFooterClass">
+        <button class="button button-stable" ng-click="closeModal()">{{ui.cancelButton}}</button>
+        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{ui.resetButton}}</button>
+    </ion-footer-bar>
+  </ion-modal-view>
+</div>  
+</div>

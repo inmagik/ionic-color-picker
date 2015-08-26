@@ -1,0 +1,40 @@
+ <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">
+    <ion-header-bar class="bar" ng-class="::ui.headerFooterClass">
+      <h1 class="title">{{::ui.modalTitle}}</h1>
+    </ion-header-bar>
+    <ion-content>
+
+    <div>
+        <div class="item item-body text-center" style="height:200px;" color-box="{{ui.sample}}">
+        <button class="button button-outline" style="margin:auto; margin-top:100px;" color-box="{{ui.sample}}" ng-click="setColor()">{{::ui.okButton}}</button>
+        </div>
+    </div>
+
+    <div>
+    
+        <div class="item range range-positive">
+            <i class="icon em1">R</i>
+            <input type="range" ng-model="internalColors.rgb.r" min="0" max="255">
+            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.r"></span>
+        </div>
+        <div class="item range range-positive">
+            <i class="icon em1">G</i>
+            <input type="range" ng-model="internalColors.rgb.g" min="0" max="255">
+            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.g"></span>
+        </div>
+        <div class="item range range-positive">
+            <i class="icon em1">B</i>
+            <input type="range" ng-model="internalColors.rgb.b" min="0" max="255">
+            <span><input parse-integer type="number" min="0" max="255" class="em1" ng-model="internalColors.rgb.b"></span>
+        </div>
+
+
+    </div> 
+    
+ 
+    </ion-content>
+    <ion-footer-bar ng-class="::ui.headerFooterClass">
+        <button class="button button-stable" ng-click="closeModal()">{{::ui.cancelButton}}</button>
+        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>
+    </ion-footer-bar>
+  </ion-modal-view>
