@@ -22,11 +22,11 @@ gulp.task('color-picker', function() {
     .pipe(addsrc( './src/ionic-color-picker.js'))
     .pipe(concat('ionic-color-picker.js'))
     .pipe( gulp.dest( 'ColorPickerExample/www/lib/ionic-color-picker/' ) )
-    .pipe(gulp.dest('ionic-color-picker/dist/'))
+    .pipe(gulp.dest('./dist/'))
     .pipe(uglify({mangle:false}))
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('ColorPickerExample/www/lib/ionic-color-picker/'))
-    .pipe(gulp.dest('ionic-color-picker/dist/'))
+    .pipe(gulp.dest('./dist/'))
     
 
 });
@@ -34,13 +34,13 @@ gulp.task('color-picker', function() {
 gulp.task('css-color-picker', function() {
     return  gulp.src( './src/ionic-color-picker.css')
     .pipe( gulp.dest( 'ColorPickerExample/www/lib/ionic-color-picker' ) )
-    .pipe(gulp.dest('ionic-color-picker/dist/'))
+    .pipe(gulp.dest('./dist/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
     .pipe( gulp.dest( 'ColorPickerExample/www/lib/ionic-color-picker' ) )
-    .pipe(gulp.dest('ionic-color-picker/dist/'))
+    .pipe(gulp.dest('./dist/'))
 
 });
 
@@ -49,4 +49,6 @@ gulp.task('watch', function() {
   gulp.watch(['./src/*.*'], ['color-picker', 'css-color-picker']);
 
 });
+
+gulp.task('default', ['color-picker', 'css-color-picker']);
 
