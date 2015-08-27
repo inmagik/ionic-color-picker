@@ -104,7 +104,7 @@ option|meaning|accepted values|default
 Here's an example of a color picker button with rgb `color-mode` (default) and hex `model-mode` (default).
 
 ```html
-<button class="button" color-picker="" ng-model="testColors.first" modal-title="Choose a color" color-box="{{testColors.first}}">
+<button class="button" color-picker ng-model="testColors.first" modal-title="Choose a color" color-box="{{testColors.first}}">
     {{ testColors.first || 'Choose a color' }} 
 </button>    
 ```
