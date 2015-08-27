@@ -7,6 +7,12 @@ Demo [here](http://codepen.io/bianchimro/pen/EVYgym?editors=101)
 
 ## Usage
 
+Get the files from github or install from bower:
+```
+bower install ionic-color-picker
+```
+
+
 Include `ionic-color-picker.css`  and `ionic-color-picker-tinycolor.js` or their minified version in your index.html:
 
 ```html
