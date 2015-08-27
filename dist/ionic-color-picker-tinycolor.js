@@ -173,6 +173,21 @@ var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['moda
     '  </ion-modal-view>\n' +
     '';
 
+/*!
+ * Copyright 2015 Inmagik SRL.
+ * http://www.inmagik.com/
+ *
+ * ionic-color-picjer, v1.0.0
+ * Flexible color picker directives for Ionic framework.
+ * 
+ * By @bianchimro
+ *
+ * Licensed under the MIT license. Please see LICENSE for more information.
+ *
+ */
+
+(function(){
+
 angular.module('ionic-color-picker', [])
 
 
@@ -202,7 +217,7 @@ angular.module('ionic-color-picker', [])
             };
 
             var modelMode = iAttrs.modelMode || 'hex';
-            var strokeColors = iAttrs.availableStrokeColors ? iAttrs.availableStrokeColors.split(",") : ["#fffff", "#000000"];
+            var strokeColors = iAttrs.availableStrokeColors ? iAttrs.availableStrokeColors.split(",") : ["#ffffff", "#000000"];
 
             var colorNames = iAttrs.namedColors ? scope.$eval(iAttrs.namedColors) :  tinycolor.names;
             var colorNamesInverted = {};
@@ -242,12 +257,13 @@ angular.module('ionic-color-picker', [])
                 }
                 
                 txt = tinycolor.mostReadable(tColor, strokeColors).toHexString();
-                if(iAttrs.colorBoxNoBorder === "true"){
+                if(iAttrs.colorBoxNoBorder !== "true"){
                     iElement.css('border-color', txt);    
                 }
-                if(iAttrs.colorBoxNoText === "true"){
-                    iElement.css('color', txt);
+                if(iAttrs.colorBoxNoText !== "true"){
+                    
                 }
+                iElement.css('color', txt);
                 iElement.css('background-color', tColor.toHexString());
                 
             });
@@ -466,3 +482,6 @@ angular.module('ionic-color-picker', [])
         }
     };
 }])
+
+
+})();
