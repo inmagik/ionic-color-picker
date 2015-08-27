@@ -168,6 +168,21 @@ var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['moda
     '  </ion-modal-view>\n' +
     '';
 
+/*!
+ * Copyright 2015 Inmagik SRL.
+ * http://www.inmagik.com/
+ *
+ * ionic-color-picjer, v1.0.0
+ * Flexible color picker directives for Ionic framework.
+ * 
+ * By @bianchimro
+ *
+ * Licensed under the MIT license. Please see LICENSE for more information.
+ *
+ */
+
+(function(){
+
 angular.module('ionic-color-picker', [])
 
 
@@ -461,3 +476,6 @@ angular.module('ionic-color-picker', [])
         }
     };
 }])
+
+
+})();

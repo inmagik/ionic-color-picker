@@ -94,13 +94,21 @@ option|meaning|accepted values|default
 
 
 ### Examples
+
+Here's an example of a color picker button with rgb `color-mode` (default) and hex `model-mode` (default).
+
 ```html
 <button class="button" color-picker="" ng-model="testColors.first" modal-title="Choose a color" color-box="{{testColors.first}}">
     {{ testColors.first || 'Choose a color' }} 
 </button>    
 ```
 
+More examples to come.
+
+See this codepen: (http://codepen.io/bianchimro/pen/EVYgym?editors=101) for now.
+
 
 ## Support this project
+
 This software package is available for free with a MIT license, but
 if you find it useful and want support its development consider buying a copy on the [Ionic Marketplace](http://market.ionic.io/plugins/ionic-color-picker) for just a few bucks.
