@@ -22,6 +22,7 @@ angular.module('ionic-color-picker', [])
         require : "ngModel",
         priority : 1000,
         link: function (scope, iElement, iAttrs, modelCtrl) {
+            
             modelCtrl.$formatters.push(function formatter(modelValue){
                 return parseInt(modelValue);
             });
@@ -35,6 +36,7 @@ angular.module('ionic-color-picker', [])
         restrict: 'A',
         scope:true,
         link: function (scope, iElement, iAttrs) {
+
             var pristines = {
                 backgroundColor : iElement.css('background-color'),
                 color : iElement.css('color'),
@@ -102,11 +104,7 @@ angular.module('ionic-color-picker', [])
         restrict: 'A',
         require : 'ngModel',
         scope:true,
-        //transclude  :true,
-        //replace : true,
-        //template : '<button><span ng-transclude></span></button>',
         link: function (scope, iElement, iAttrs, ngModelController) {
-
             
             var colorMode =  iAttrs.colorMode || 'rgb';
             var customColors = iAttrs.namedColors !== undefined;

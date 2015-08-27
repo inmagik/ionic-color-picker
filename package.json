@@ -2,10 +2,8 @@
   "name": "ionic-color-picker",
   "version": "1.0.0",
   "description": "Color picker for ionic",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "scripts": { },
+  "author": "bianchimro@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",

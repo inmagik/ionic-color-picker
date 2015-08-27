@@ -1,0 +1,25 @@
+{
+  "name": "ionic-color-picker",
+  "version": "1.0.0",
+  "homepage": "https://github.com/inmagik/ionic-color-picker",
+  "authors": [
+    "Mauro Bianchi <bianchimro@gmail.com>"
+  ],
+  "description": "Flexible color pickers for ionic framework",
+  "keywords": [
+    "ionic",
+    "color",
+    "picker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": ">=1.0.0"
+  }
+}
