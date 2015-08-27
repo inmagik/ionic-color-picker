@@ -15,7 +15,7 @@ Include `ionic-color-picker.css`  and `ionic-color-picker-tinycolor.js` or their
 <script src="lib/ionic-color-picker/ionic-color-picker-tinycolor.js"></script>
 
 ```
-The js script bundles tinycolor [tinycolor](https://github.com/bgrins/TinyColor).
+The js script bundles [tinycolor](https://github.com/bgrins/TinyColor).
 If you want you can add tinycolor separately, in this case use this js file for the picker:
 
 
