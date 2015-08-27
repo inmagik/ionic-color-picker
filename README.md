@@ -2,6 +2,7 @@
 
 Flexible color pickers for Ionic Framework based on [$ionicModal](http://ionicframework.com/docs/api/service/$ionicModal/) and [tinycolor](https://github.com/bgrins/TinyColor).
 
+Demo [here](http://codepen.io/bianchimro/pen/EVYgym?editors=101)
 
 
 ## Usage
