@@ -12,14 +12,13 @@ angular.module('ionic-color-picker', [])
         require : "ngModel",
         priority : 1000,
         link: function (scope, iElement, iAttrs, modelCtrl) {
-            // conversion "model -> view"
             modelCtrl.$formatters.push(function formatter(modelValue){
                 return parseInt(modelValue);
-            })
-            
+            });
         }
     };
 }])
+
 
 .directive('colorBox', [function () {
     return {
@@ -45,7 +44,6 @@ angular.module('ionic-color-picker', [])
             
             var tColor, txt;
             iAttrs.$observe('colorBox', function(nv){
-
                 if(!nv){
                     iElement.css('background-color', pristines.backgroundColor);    
                     iElement.css('color', pristines.color);
@@ -82,21 +80,11 @@ angular.module('ionic-color-picker', [])
                 }
                 iElement.css('background-color', tColor.toHexString());
                 
-                
-            })
+            });
             
         }
     };
 }])
-
-/*
-
-TODO:
-- multiple modes: css, hsl, hsv, adobe-like
-- form vs sliders
-- fixed set
-
-*/
 
 
 .directive('colorPicker', ['$ionicModal','$timeout' ,function ($ionicModal, $timeout) {
@@ -160,8 +148,7 @@ TODO:
                 selectMode : 'sliders',
                 namedColors : colorNames,
                 namedColorsAsList : []
-            }
-
+            };
 
             var output = [];
             for (var key in scope.ui.namedColors) {
@@ -204,16 +191,9 @@ TODO:
                 });
             };
 
-
-            var setColorByHex = function(col){
-                
-            };
-
-
             var setColorTo = function(col, fun){
                 ngModelController.$setViewValue(col[fun]());    
-
-            }
+            };
 
             //we expect a color here
             var setColorToName = function(col){

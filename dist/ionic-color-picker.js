@@ -47,6 +47,127 @@ var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['moda
     '</ion-modal-view>\n' +
     '';
 
+var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-hsv.html'] = '<ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">    \n' +
+    '\n' +
+    '    <ion-header-bar ng-class="::ui.headerFooterClass">\n' +
+    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
+    '    </ion-header-bar>\n' +
+    '    <ion-content>\n' +
+    '\n' +
+    '    <div>\n' +
+    '        <div class="item item-body text-center" style="height:200px;" color-box="{{ui.sample}}">\n' +
+    '        <button class="button button-outline" style="margin:auto; margin-top:100px;" color-box="{{ui.sample}}" ng-click="setColor()">{{::ui.okButton}}</button>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    \n' +
+    '    <div>\n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">H</i>\n' +
+    '            <input type="range" ng-model="internalColors.hsv.h" min="0" max="360">\n' +
+    '                <span><input parse-integer type="number" min="0" max="360"  class="em1" ng-model="internalColors.hsv.h"></span>\n' +
+    '        </div>\n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">S %</i>\n' +
+    '            <input type="range" ng-model="internalColors.hsv.s" min="0" max="100">\n' +
+    '            <span><input parse-integer type="number" min="0" max="100"  class="em1" ng-model="internalColors.hsv.s"></span>\n' +
+    '        </div>\n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">V %</i>\n' +
+    '            <input type="range" ng-model="internalColors.hsv.v" min="0" max="100">\n' +
+    '            <span><input parse-integer type="number" min="0" max="100"  class="em1" ng-model="internalColors.hsv.v"></span>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '      \n' +
+    '    </ion-content>\n' +
+    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
+    '        <button class="button button-stable" ng-click="closeModal()">{{::ui.cancelButton}}</button>\n' +
+    '        <button ng-if="!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>\n' +
+    '    </ion-footer-bar>\n' +
+    '  </ion-modal-view>\n' +
+    '</div>  \n' +
+    '</div>';
+
+var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-name.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
+    '    <ion-header-bar ng-class="::ui.headerFooterClass">\n' +
+    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
+    '    </ion-header-bar>\n' +
+    '    <ion-content>\n' +
+    '\n' +
+    '    <div ng-if="!ui.shortColorList">\n' +
+    '        <div class="text-center" ng-if="!showList" style="padding-top:40px;">\n' +
+    '            <h4 class="muted">{{::ui.loadListMessage}}</h4>\n' +
+    '            <p>\n' +
+    '                <ion-spinner></ion-spinner>\n' +
+    '            </p>\n' +
+    '        </div>\n' +
+    '        <div class="list" ng-if="showList" class="animate-if">\n' +
+    '            <div class="item item-text-wrap" collection-repeat="col in ui.namedColorsAsList track by $index" color-box="{{col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">\n' +
+    '            <h2 color-box="{{col[1]}}">{{col[0]}}</h2>\n' +
+    '            <p color-box="{{col[1]}}">{{col[1]}}</p>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '    <div ng-if="ui.shortColorList">\n' +
+    '        <div class="list">\n' +
+    '            <div class="item item-text-wrap" ng-repeat="col in ui.namedColorsAsList track by $index" color-box="{{::col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">\n' +
+    '            <h2 color-box="{{::col[1]}}">{{::col[0]}}</h2>\n' +
+    '            <p color-box="{{::col[1]}}">{{::col[1]}}</p>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '      \n' +
+    '    </ion-content>\n' +
+    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
+    '        <button class="button button-stable" ng-click="closeModal()">{{ui.cancelButton}}</button>\n' +
+    '        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{ui.resetButton}}</button>\n' +
+    '    </ion-footer-bar>\n' +
+    '  </ion-modal-view>\n' +
+    '</div>  \n' +
+    '</div>';
+
+var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-rgb.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
+    '    <ion-header-bar class="bar" ng-class="::ui.headerFooterClass">\n' +
+    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
+    '    </ion-header-bar>\n' +
+    '    <ion-content>\n' +
+    '\n' +
+    '    <div>\n' +
+    '        <div class="item item-body text-center" style="height:200px;" color-box="{{ui.sample}}">\n' +
+    '        <button class="button button-outline" style="margin:auto; margin-top:100px;" color-box="{{ui.sample}}" ng-click="setColor()">{{::ui.okButton}}</button>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <div>\n' +
+    '    \n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">R</i>\n' +
+    '            <input type="range" ng-model="internalColors.rgb.r" min="0" max="255">\n' +
+    '            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.r"></span>\n' +
+    '        </div>\n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">G</i>\n' +
+    '            <input type="range" ng-model="internalColors.rgb.g" min="0" max="255">\n' +
+    '            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.g"></span>\n' +
+    '        </div>\n' +
+    '        <div class="item range range-positive">\n' +
+    '            <i class="icon em1">B</i>\n' +
+    '            <input type="range" ng-model="internalColors.rgb.b" min="0" max="255">\n' +
+    '            <span><input parse-integer type="number" min="0" max="255" class="em1" ng-model="internalColors.rgb.b"></span>\n' +
+    '        </div>\n' +
+    '\n' +
+    '\n' +
+    '    </div> \n' +
+    '    \n' +
+    ' \n' +
+    '    </ion-content>\n' +
+    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
+    '        <button class="button button-stable" ng-click="closeModal()">{{::ui.cancelButton}}</button>\n' +
+    '        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>\n' +
+    '    </ion-footer-bar>\n' +
+    '  </ion-modal-view>\n' +
+    '';
+
 // TinyColor v1.2.1
 // https://github.com/bgrins/TinyColor
 // 2015-08-13, Brian Grinstead, MIT License
@@ -365,124 +486,3 @@ TODO:
         }
     };
 }])
-
-var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-hsv.html'] = '<ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">    \n' +
-    '\n' +
-    '    <ion-header-bar ng-class="::ui.headerFooterClass">\n' +
-    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
-    '    </ion-header-bar>\n' +
-    '    <ion-content>\n' +
-    '\n' +
-    '    <div>\n' +
-    '        <div class="item item-body text-center" style="height:200px;" color-box="{{ui.sample}}">\n' +
-    '        <button class="button button-outline" style="margin:auto; margin-top:100px;" color-box="{{ui.sample}}" ng-click="setColor()">{{::ui.okButton}}</button>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '\n' +
-    '    \n' +
-    '    <div>\n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">H</i>\n' +
-    '            <input type="range" ng-model="internalColors.hsv.h" min="0" max="360">\n' +
-    '                <span><input parse-integer type="number" min="0" max="360"  class="em1" ng-model="internalColors.hsv.h"></span>\n' +
-    '        </div>\n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">S %</i>\n' +
-    '            <input type="range" ng-model="internalColors.hsv.s" min="0" max="100">\n' +
-    '            <span><input parse-integer type="number" min="0" max="100"  class="em1" ng-model="internalColors.hsv.s"></span>\n' +
-    '        </div>\n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">V %</i>\n' +
-    '            <input type="range" ng-model="internalColors.hsv.v" min="0" max="100">\n' +
-    '            <span><input parse-integer type="number" min="0" max="100"  class="em1" ng-model="internalColors.hsv.v"></span>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '      \n' +
-    '    </ion-content>\n' +
-    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
-    '        <button class="button button-stable" ng-click="closeModal()">{{::ui.cancelButton}}</button>\n' +
-    '        <button ng-if="!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>\n' +
-    '    </ion-footer-bar>\n' +
-    '  </ion-modal-view>\n' +
-    '</div>  \n' +
-    '</div>';
-
-var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-name.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
-    '    <ion-header-bar ng-class="::ui.headerFooterClass">\n' +
-    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
-    '    </ion-header-bar>\n' +
-    '    <ion-content>\n' +
-    '\n' +
-    '    <div ng-if="!ui.shortColorList">\n' +
-    '        <div class="text-center" ng-if="!showList" style="padding-top:40px;">\n' +
-    '            <h4 class="muted">{{::ui.loadListMessage}}</h4>\n' +
-    '            <p>\n' +
-    '                <ion-spinner></ion-spinner>\n' +
-    '            </p>\n' +
-    '        </div>\n' +
-    '        <div class="list" ng-if="showList" class="animate-if">\n' +
-    '            <div class="item item-text-wrap" collection-repeat="col in ui.namedColorsAsList track by $index" color-box="{{col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">\n' +
-    '            <h2 color-box="{{col[1]}}">{{col[0]}}</h2>\n' +
-    '            <p color-box="{{col[1]}}">{{col[1]}}</p>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '    <div ng-if="ui.shortColorList">\n' +
-    '        <div class="list">\n' +
-    '            <div class="item item-text-wrap" ng-repeat="col in ui.namedColorsAsList track by $index" color-box="{{::col[1]}}" color-box-no-border="true" ng-click="setColor(col[0])">\n' +
-    '            <h2 color-box="{{::col[1]}}">{{::col[0]}}</h2>\n' +
-    '            <p color-box="{{::col[1]}}">{{::col[1]}}</p>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '      \n' +
-    '    </ion-content>\n' +
-    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
-    '        <button class="button button-stable" ng-click="closeModal()">{{ui.cancelButton}}</button>\n' +
-    '        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{ui.resetButton}}</button>\n' +
-    '    </ion-footer-bar>\n' +
-    '  </ion-modal-view>\n' +
-    '</div>  \n' +
-    '</div>';
-
-var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-rgb.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
-    '    <ion-header-bar class="bar" ng-class="::ui.headerFooterClass">\n' +
-    '      <h1 class="title">{{::ui.modalTitle}}</h1>\n' +
-    '    </ion-header-bar>\n' +
-    '    <ion-content>\n' +
-    '\n' +
-    '    <div>\n' +
-    '        <div class="item item-body text-center" style="height:200px;" color-box="{{ui.sample}}">\n' +
-    '        <button class="button button-outline" style="margin:auto; margin-top:100px;" color-box="{{ui.sample}}" ng-click="setColor()">{{::ui.okButton}}</button>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '\n' +
-    '    <div>\n' +
-    '    \n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">R</i>\n' +
-    '            <input type="range" ng-model="internalColors.rgb.r" min="0" max="255">\n' +
-    '            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.r"></span>\n' +
-    '        </div>\n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">G</i>\n' +
-    '            <input type="range" ng-model="internalColors.rgb.g" min="0" max="255">\n' +
-    '            <span><input parse-integer type="number" min="0" max="255"  class="em1" ng-model="internalColors.rgb.g"></span>\n' +
-    '        </div>\n' +
-    '        <div class="item range range-positive">\n' +
-    '            <i class="icon em1">B</i>\n' +
-    '            <input type="range" ng-model="internalColors.rgb.b" min="0" max="255">\n' +
-    '            <span><input parse-integer type="number" min="0" max="255" class="em1" ng-model="internalColors.rgb.b"></span>\n' +
-    '        </div>\n' +
-    '\n' +
-    '\n' +
-    '    </div> \n' +
-    '    \n' +
-    ' \n' +
-    '    </ion-content>\n' +
-    '    <ion-footer-bar ng-class="::ui.headerFooterClass">\n' +
-    '        <button class="button button-stable" ng-click="closeModal()">{{::ui.cancelButton}}</button>\n' +
-    '        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>\n' +
-    '    </ion-footer-bar>\n' +
-    '  </ion-modal-view>\n' +
-    '';
