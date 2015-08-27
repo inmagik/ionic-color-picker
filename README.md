@@ -80,7 +80,7 @@ option|meaning|accepted values|default
 
 
 ### color-box
-This directive helps binds an element background, color and border-color to a given color, with the following logic:
+This directive binds an element background, color and border-color to a given color, with the following logic:
 
 * background color is set as the given color
 * text color and border are calculated automatically for using 'black' or 'white' (or other colors you might specify via `available-stroke-colors` attribute 
