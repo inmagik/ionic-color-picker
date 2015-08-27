@@ -110,7 +110,7 @@ Here's an example of a color picker button with rgb `color-mode` (default) and h
 
 More examples to come.
 
-See this codepen: (http://codepen.io/bianchimro/pen/EVYgym?editors=101) for now.
+See this codepen: [http://codepen.io/bianchimro/pen/EVYgym?editors=101] for now.
 
 
 ## Support this project
