@@ -17,7 +17,6 @@ gulp.task('color-picker', function() {
     .pipe(jsifyTemplates())
     .pipe(replace("htmlTemplates", 'colorPickerTemplates'))
     .pipe(concat('templates.js'))
-
     .pipe(addsrc( './src/ionic-color-picker.js'))
     .pipe(order(['templates.js', 'src/ionic-color-picker.js']))
     .pipe(concat('ionic-color-picker.js'))
@@ -25,9 +24,21 @@ gulp.task('color-picker', function() {
     .pipe(uglify({mangle:false}))
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./dist/'))
-    
 
 });
+
+gulp.task('color-picker-tiny', function() {
+    return  gulp.src( [
+      './src/tinycolor.min.js',
+      './dist/ionic-color-picker.js'])
+    .pipe(concat('ionic-color-picker-tinycolor.js'))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(uglify({mangle:false}))
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./dist/'))    
+
+});
+
 
 gulp.task('css-color-picker', function() {
     return gulp.src( './src/ionic-color-picker.css')
@@ -42,9 +53,9 @@ gulp.task('css-color-picker', function() {
 
 
 gulp.task('watch', function() {
-  gulp.watch(['./src/*.*'], ['color-picker', 'css-color-picker']);
+  gulp.watch(['./src/*.*'], ['color-picker', 'css-color-picker', 'color-picker-tiny']);
 
 });
 
-gulp.task('default', ['color-picker', 'css-color-picker']);
+gulp.task('default', ['color-picker', 'css-color-picker', 'color-picker-tiny']);
 

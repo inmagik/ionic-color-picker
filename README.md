@@ -96,7 +96,7 @@ option|meaning|accepted values|default
 ### Examples
 ```html
 <button class="button" color-picker="" ng-model="testColors.first" modal-title="Choose a color" color-box="{{testColors.first}}">
-	{{ testColors.first || 'Choose a color' }} 
+    {{ testColors.first || 'Choose a color' }} 
 </button>    
 ```
 
