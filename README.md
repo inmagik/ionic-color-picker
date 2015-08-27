@@ -6,15 +6,22 @@ Flexible color pickers for Ionic Framework based on [$ionicModal](http://ionicfr
 
 ## Usage
 
-Include `ionic-color-picker.css`  and `ionic-color-picker.js` or their minified version in your index.html:
+Include `ionic-color-picker.css`  and `ionic-color-picker-tinycolor.js` or their minified version in your index.html:
 
 ```html
 
 <link rel="stylesheet" href="lib/ionic-color-picker/ionic-color-picker.css">
-<script src="lib/ionic-color-picker/ionic-color-picker.js"></script>
-
+<script src="lib/ionic-color-picker/ionic-color-picker-tinycolor.js"></script>
 
 ```
+The js script bundles tinycolor [tinycolor](https://github.com/bgrins/TinyColor).
+If you want you can add tinycolor separately, in this case use this js file for the picker:
+
+
+```html
+<script src="lib/ionic-color-picker/ionic-color-picker.js"></script>
+```
+
 
 Add the module `ionic-color-picker` to your application dependencies:
 
@@ -88,8 +95,6 @@ option|meaning|accepted values|default
 `named-colors`|Custom named colors to be used if `color-mode` is set to 'name'.|Custom colors must be passed as an object with keys as color names and values as colors hex values. Example: customColors = { "redcanaglia" : "#ff0000", "canaryblue" : "#33ffff" }|Not set. css named colors will be used as default
 `color-box-no-border`|Tells to not change the `border-color` css property for the element| string. Set to true for no border| false
 `color-box-no-text`|Tells to not change the css `color` property for the element| string. Set to true for no color change| false
-
-
 
 
 
