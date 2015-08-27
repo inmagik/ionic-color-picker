@@ -83,7 +83,7 @@ option|meaning|accepted values|default
 This directive binds an element background, color and border-color to a given color, with the following logic:
 
 * background color is set as the given color
-* text color and border are calculated automatically for using 'black' or 'white' (or other colors you might specify via `available-stroke-colors` attribute 
+* text color and border are calculated automatically for using the "most readable" color between a given set. The default set is ["#ffffff", "#000000"] (black and white)  and  other colors may be specified via `available-stroke-colors` attribute. 
 
 
 #### options
