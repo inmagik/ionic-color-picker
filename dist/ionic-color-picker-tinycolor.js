@@ -261,9 +261,8 @@ angular.module('ionic-color-picker', [])
                     iElement.css('border-color', txt);    
                 }
                 if(iAttrs.colorBoxNoText !== "true"){
-                    
+                    iElement.css('color', txt);
                 }
-                iElement.css('color', txt);
                 iElement.css('background-color', tColor.toHexString());
                 
             });

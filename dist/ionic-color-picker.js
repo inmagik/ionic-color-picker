@@ -85,8 +85,7 @@ var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['moda
     '        <button ng-if="!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{::ui.resetButton}}</button>\n' +
     '    </ion-footer-bar>\n' +
     '  </ion-modal-view>\n' +
-    '</div>  \n' +
-    '</div>';
+    '';
 
 var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-name.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
     '    <ion-header-bar ng-class="::ui.headerFooterClass">\n' +
@@ -122,9 +121,7 @@ var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['moda
     '        <button class="button button-stable" ng-click="closeModal()">{{ui.cancelButton}}</button>\n' +
     '        <button ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetColor()">{{ui.resetButton}}</button>\n' +
     '    </ion-footer-bar>\n' +
-    '  </ion-modal-view>\n' +
-    '</div>  \n' +
-    '</div>';
+    '</ion-modal-view>';
 
 var colorPickerTemplates = colorPickerTemplates || {};colorPickerTemplates['modal-template-rgb.html'] = ' <ion-modal-view class="color-picker-modal" ng-class="::ui.modalClass">\n' +
     '    <ion-header-bar class="bar" ng-class="::ui.headerFooterClass">\n' +
@@ -192,6 +189,7 @@ angular.module('ionic-color-picker', [])
         require : "ngModel",
         priority : 1000,
         link: function (scope, iElement, iAttrs, modelCtrl) {
+            
             modelCtrl.$formatters.push(function formatter(modelValue){
                 return parseInt(modelValue);
             });
@@ -205,6 +203,7 @@ angular.module('ionic-color-picker', [])
         restrict: 'A',
         scope:true,
         link: function (scope, iElement, iAttrs) {
+
             var pristines = {
                 backgroundColor : iElement.css('background-color'),
                 color : iElement.css('color'),
@@ -272,11 +271,7 @@ angular.module('ionic-color-picker', [])
         restrict: 'A',
         require : 'ngModel',
         scope:true,
-        //transclude  :true,
-        //replace : true,
-        //template : '<button><span ng-transclude></span></button>',
         link: function (scope, iElement, iAttrs, ngModelController) {
-
             
             var colorMode =  iAttrs.colorMode || 'rgb';
             var customColors = iAttrs.namedColors !== undefined;
