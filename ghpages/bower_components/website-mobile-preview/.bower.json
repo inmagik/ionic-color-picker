@@ -1,0 +1,14 @@
+{
+  "name": "website-mobile-preview",
+  "homepage": "https://github.com/beeker1121/website-mobile-preview",
+  "_release": "6796b6a287",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6796b6a287f8ee735a62f9d13dfa1690caa3df9f"
+  },
+  "_source": "https://github.com/beeker1121/website-mobile-preview.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/beeker1121/website-mobile-preview.git",
+  "_direct": true
+}

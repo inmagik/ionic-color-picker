@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    
+    <link rel="stylesheet" href="ghpages/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Univers|Kalam|Bangers' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="ghpages/style.css">
+    
+  </head>
+  <body>
+    <!-- page content -->
+    <div class="container main-content">
+
+    <div class="row">
+        
+        <div class="col col-sm-6 col-sm-offset-3">
+            <div class="text-center">
+                <h4 class="text-center body-text">hello, my name is</h4>
+                
+                <div class="changing" style="height:4px;"></div> 
+                <div class="changing2" style="height:3px;"></div>  
+                <div class="changing" style="height:12px;"></div>
+                <h1 class="text-center display main-name">ionic-color-picker</h1>
+                <div class="changing" style="height:12px;"></div>
+                <div class="changing2" style="height:3px;"></div>  
+                <div class="changing" style="height:4px;"></div> 
+                
+                
+            </div>
+            
+        
+            <p class="text-center lead body-text section">
+                I am a color picker component for the <a class="display" href="http://ionicframework.com/">Ionic Framework</a>.
+            </p>
+            <p class="text-center lead body-text">
+                I am very easy to use, as I am based on just one <code>ng-model</code> aware angularjs directive.
+            </p>
+            
+
+            <div class="text-center section">
+                <div style="display:inline-block">
+                <!--<span class="changing connector-left"></span>-->
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-2"></span>
+                <span class="changing circled"></span>
+                <span class="changing circled circled-2"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <!--<span class="changing connector-right"></span>-->
+                <span class="clearfix"></span>
+                <div class="changing connector"></div>
+                </div>
+            </div>
+
+            <p class="text-center lead body-text">
+                Here is a <a class="display" href="http://codepen.io/bianchimro/pen/EVYgym?editors=101">codepen</a> of me in action.
+            </p>
+
+
+            <div class="text-center" style="">
+                <div class="example" id="preview" style="margin:60px auto;"></div>
+            </div>
+
+
+        
+            <div class="text-center section">
+                <div style="display:inline-block">
+                <!--<span class="changing connector-left"></span>-->
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-2"></span>
+                <span class="changing circled"></span>
+                <span class="changing circled circled-2"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <span class="changing circled circled-3"></span>
+                <!--<span class="changing connector-right"></span>-->
+                <span class="clearfix"></span>
+                <div class="changing connector"></div>
+                </div>
+            </div>
+        
+            <p class="text-center lead body-text section">
+                I was built @ <a class="display" href="http://www.inmagik.com">INMAGIK</a>, a software developement company based in Bergamo, Italy.
+            </p>
+            
+        
+            <p class="text-center lead body-text section">
+                To know everything about me, please visit my <br><a class="display" href="https://github.com/inmagik/ionic-color-picker">project page on github</a>
+            </p>
+
+        </div>
+        
+    </div>
+    </div>
+    
+    
+
+    <script src="ghpages/bower_components/website-mobile-preview/biomp.js"></script>
+    <script>
+        var scale = window.innerWidth >= 600 ? window.innerWidth >= 1000 ? 1 : 0.825 : 0.75;
+        bioMp(document.getElementById('preview'),
+            {
+                url: 'http://codepen.io/bianchimro/full/EVYgym/',
+                view: 'front',
+                image: 'ghpages/bower_components/website-mobile-preview/images/iphone6_front_black.png',
+            scale : scale
+            });
+    </script>
+    <script src="ghpages/lib/d3/d3.min.js"></script>
+    
+    <script>
+
+    var b = d3.selectAll(".changing")
+    var idx = 0;
+    function changeBack(){
+        var h = Math.random() * 360;
+        var s = Math.max(Math.random() * 100, 20);
+        //var l = Math.max(Math.random(), .20);
+
+        b
+        .transition()
+        .duration(8000)
+        .style("background-color", d3.hsl(h, s, .5) )
+        
+        setTimeout(changeBack, 8100);
+    }
+    
+    changeBack();
+
+    </script>
+  </body>
+</html>

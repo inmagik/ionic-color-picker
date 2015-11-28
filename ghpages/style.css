@@ -1,0 +1,99 @@
+body{
+            margin:0;
+            padding:0;
+            width: 100%;
+            -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
+
+        }
+        
+        .main-content{
+            padding: 3em;
+            padding-top:1em;
+        }
+        .section{
+            margin-top: 2em;   
+        }
+        .display {
+            font-family: 'Kalam', cursive !important;
+        }
+        .body-text {
+            font-family: 'Univers', sans-serif !important;
+            
+        }
+
+        .main-name{
+            font-family: 'Bangers', sans-serif !important;
+        }
+        .changing{
+            
+        }
+        .changing-left{
+            z-index: 1000;
+            position: fixed;
+            top:0px;
+            bottom:0;
+            width: 1em;
+            
+        }
+
+        .changing-right{
+            position: fixed;
+            z-index: 1000;
+            top:0px;
+            right:0px;
+            bottom:0px;
+            width: 1em;
+        }
+
+        .main-name{
+            font-size: 3.2em;
+        }
+
+        .circled {
+            height:32px;
+            width:32px;
+            border-radius: 100%;
+            float:left;
+            margin-left:2px;
+            margin-right:2px;
+        }
+
+        .circled-2 {
+            height:24px;
+            width:24px;
+            margin-top:6px;
+        }
+
+        .circled-3 {
+            height:12px;
+            width:12px;
+            margin-top:12px;
+        }
+
+        .connector-right{
+            position: relative;
+            height: 2px;
+            left:80%;
+            width:100%;
+            display: inline-block;
+            top:-28px;
+            
+        }
+        .connector-left{
+            position: relative;
+            height: 2px;
+            width: 100%;
+            right:100%;
+            display: inline-block;
+            top:24px;
+        }
+
+        .connector{
+            position: relative;
+            height: 2px;
+            width: 200%;
+            left: -50%;
+            margin:0px;
+            padding:0px;
+            top: -16px;
+        }
