@@ -330,8 +330,6 @@ angular.module('ionic-color-picker', [])
                 namedColorsAsList : []
             };
 
-            console.log(scope.ui)
-
             var output = [];
             for (var key in scope.ui.namedColors) {
               var k = scope.ui.namedColors[key];
@@ -342,7 +340,8 @@ angular.module('ionic-color-picker', [])
             var shortList = scope.ui.namedColorsAsList.length < shortListBreak;
             scope.ui.shortColorList = shortList;
 
-            var initial = ngModelController.$viewValue;  
+            
+
 
             var getScopeColor = function(c){
                 if(colorMode == 'rgb'){
@@ -355,15 +354,19 @@ angular.module('ionic-color-picker', [])
                     return c.toHsv();
                 }
             };
+            
+            $timeout(function(){
+                var initial = ngModelController.$viewValue;  
+                if(initial){
+                    if(customColors){
+                        c = tinycolor(colorNames[initial]);
+                    } else {
+                        c  = tinycolor(initial);
+                    }
+                    scope.internalColors[colorMode] = getScopeColor(c);
+                } 
+            });
 
-            if(initial){
-                if(customColors){
-                    c = tinycolor(colorNames[initial]);
-                } else {
-                    c  = tinycolor(initial);
-                }
-                scope.internalColors[colorMode] = getScopeColor(c);
-            } 
 
             scope.unsetColor = function(){
                 $timeout(function(){
