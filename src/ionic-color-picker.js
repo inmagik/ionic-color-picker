@@ -181,7 +181,12 @@ angular.module('ionic-color-picker', [])
                     return c.toHsv();
                 }
             };
-
+            
+            if (iAttrs.colorBox) {
+                var convertedColor = tinycolor(iAttrs.colorBox);
+                scope.internalColors[colorMode] = getScopeColor(convertedColor);
+            }
+            
             if(initial){
                 if(customColors){
                     c = tinycolor(colorNames[initial]);
