@@ -1,5 +1,7 @@
 # ionic-color-picker
 
+![alt tag](https://raw.github.com/inmagik/ionic-color-picker/master/logo/ionic-color-picker.png)
+
 Flexible color pickers for Ionic Framework based on [$ionicModal](http://ionicframework.com/docs/api/service/$ionicModal/) and [tinycolor](https://github.com/bgrins/TinyColor).
 
 Demo [here](http://codepen.io/bianchimro/pen/EVYgym?editors=101)

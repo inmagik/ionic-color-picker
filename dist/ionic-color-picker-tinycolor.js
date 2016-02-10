@@ -330,8 +330,6 @@ angular.module('ionic-color-picker', [])
                 namedColorsAsList : []
             };
 
-            console.log(scope.ui)
-
             var output = [];
             for (var key in scope.ui.namedColors) {
               var k = scope.ui.namedColors[key];
@@ -341,8 +339,6 @@ angular.module('ionic-color-picker', [])
 
             var shortList = scope.ui.namedColorsAsList.length < shortListBreak;
             scope.ui.shortColorList = shortList;
-
-            var initial = ngModelController.$viewValue;  
 
             var getScopeColor = function(c){
                 if(colorMode == 'rgb'){
@@ -355,15 +351,25 @@ angular.module('ionic-color-picker', [])
                     return c.toHsv();
                 }
             };
+            
+            
 
-            if(initial){
-                if(customColors){
-                    c = tinycolor(colorNames[initial]);
-                } else {
-                    c  = tinycolor(initial);
-                }
-                scope.internalColors[colorMode] = getScopeColor(c);
-            } 
+            ngModelController.$render = function(){
+                var initial = ngModelController.$viewValue;  
+                if(initial){
+                    if(customColors){
+                        c = tinycolor(colorNames[initial]);
+                    } else {
+                        c  = tinycolor(initial);
+                    }
+                    scope.internalColors[colorMode] = getScopeColor(c);
+                } 
+            };
+
+            $timeout(function(){
+                ngModelController.$render();
+            });
+
 
             scope.unsetColor = function(){
                 $timeout(function(){
@@ -396,7 +402,6 @@ angular.module('ionic-color-picker', [])
                 } else {
                     col = tinycolor(getCurrentColorModel())
                 }
-
                 switch(modelMode){
                     case 'name':
                         setColorToName(col);
@@ -407,7 +412,8 @@ angular.module('ionic-color-picker', [])
                     default:
                         setColorTo(col, 'toHexString');    
                 }
-                
+
+                ngModelController.$render();
                 scope.modal.hide();
                 scope.showList = false;
             };
